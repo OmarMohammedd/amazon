@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "watch": "nodemon --ext js,ejs --ignore public"
+    "dev": "node app.js",
+    "build": "npm i"
   },
   "author": "",
   "license": "ISC",

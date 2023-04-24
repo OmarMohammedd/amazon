@@ -17,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {useSelector} from "react-redux";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import { BASE_URL } from "../../utils/config"
 
 
 
@@ -36,7 +37,7 @@ const Navbaar = () => {
 
 
   const getdetailsvaliduser = async () => {
-    const res = await fetch("/validuser", {
+    const res = await fetch(`${BASE_URL}/validuser`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -66,7 +67,7 @@ const Navbaar = () => {
   const history = useNavigate("");
 
     const logoutuser = async () => {
-        const res2 = await fetch("/logout", {
+        const res2 = await fetch(`${BASE_URL}/logout`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -152,7 +153,7 @@ const { products } = useSelector(state => state.getproductsdata);
           // @ts-ignore
           products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => (
               <ListItem>
-                  <NavLink to={`/getproductsone/${product.id}`} onClick={() => setLiopen(true)}>
+                  <NavLink to={`${BASE_URL}/getproductsone/${product.id}`} onClick={() => setLiopen(true)}>
                       {product.title.longTitle}
                   </NavLink>
               </ListItem>

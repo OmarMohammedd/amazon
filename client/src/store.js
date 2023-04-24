@@ -2,7 +2,7 @@ import { createStore,applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import {composeWithDevTools} from "redux-devtools-extension";
 import rootreducers from "./components/redux/reducers/main";
-
+// import { legacy_createStore as createStore} from 'redux'
 
 const middleware = [thunk];
 
